@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cyp01jsvkocdc"
-path.s3tc="res://.godot/imported/heavy_revolver_texture-test.png-120f7610af7da1d15f5eca4acdb19a5d.s3tc.ctex"
+uid="uid://c81uul03a8d7e"
+path.s3tc="res://.godot/imported/sledge2.png-110288ca8bf2c4e8a9435d39785fdc4e.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Textures/heavy_revolver_texture-test.png"
-dest_files=["res://.godot/imported/heavy_revolver_texture-test.png-120f7610af7da1d15f5eca4acdb19a5d.s3tc.ctex"]
+source_file="res://Assets/Textures/weapons/sledge2.png"
+dest_files=["res://.godot/imported/sledge2.png-110288ca8bf2c4e8a9435d39785fdc4e.s3tc.ctex"]
 
 [params]
 
