@@ -1,6 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://boa2tlfj7qwyx"]
+[gd_scene load_steps=5 format=3 uid="uid://boa2tlfj7qwyx"]
 
 [ext_resource type="Script" uid="uid://ca8pt2ryajib7" path="res://Scripts/classes/ProjectileBase.gd" id="1_3bppk"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_3bppk"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sv6fe"]
+albedo_color = Color(0.435533, 0.435533, 0, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kvu6l"]
+size = Vector3(0.150635, 0.0281754, 0.0496826)
 
 [node name="Basic-bullet" type="RigidBody3D"]
 gravity_scale = 0.0
@@ -8,3 +16,12 @@ script = ExtResource("1_3bppk")
 damage = 25
 lifetime = 5.0
 metadata/_custom_type_script = "uid://ca8pt2ryajib7"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.105, 0, 0, 0, 0.018, 0, 0, 0, 0.018, 0, 0, 0)
+mesh = SubResource("BoxMesh_3bppk")
+surface_material_override/0 = SubResource("StandardMaterial3D_sv6fe")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0020752, -0.000553131, 0.000549316)
+shape = SubResource("BoxShape3D_kvu6l")
