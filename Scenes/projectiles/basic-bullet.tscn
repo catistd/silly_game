@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://boa2tlfj7qwyx"]
+
+[ext_resource type="Script" uid="uid://ca8pt2ryajib7" path="res://Scripts/classes/ProjectileBase.gd" id="1_3bppk"]
+
+[node name="Basic-bullet" type="RigidBody3D"]
+gravity_scale = 0.0
+script = ExtResource("1_3bppk")
+damage = 25
+lifetime = 5.0
+metadata/_custom_type_script = "uid://ca8pt2ryajib7"
