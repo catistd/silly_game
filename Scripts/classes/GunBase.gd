@@ -33,5 +33,5 @@ func fire(start_pos: Vector3, end_pos: Vector3, type: FireType):
 	var proj = Stats[Stat.Proj].instantiate()
 
 	proj.position = start_pos
-	proj.velocity = fire_dir * Stats[Stat.Vel]
+	proj.linear_velocity = fire_dir * Stats[Stat.Vel]
 	get_parent().add_sibling(proj)
