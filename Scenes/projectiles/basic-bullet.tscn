@@ -8,7 +8,7 @@
 albedo_color = Color(0.435533, 0.435533, 0, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kvu6l"]
-size = Vector3(0.150635, 0.0281754, 0.0496826)
+size = Vector3(0.150635, 0.0418215, 0.0531616)
 
 [node name="Basic-bullet" type="RigidBody3D"]
 gravity_scale = 0.0
@@ -23,5 +23,5 @@ mesh = SubResource("BoxMesh_3bppk")
 surface_material_override/0 = SubResource("StandardMaterial3D_sv6fe")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0020752, -0.000553131, 0.000549316)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0020752, 6.91414e-05, -0.00119019)
 shape = SubResource("BoxShape3D_kvu6l")

@@ -6,19 +6,24 @@ class_name ProjectileBase
 @export var lifetime: float
 @export var persistant: bool
 
+var destroy = Callable(self, "Kill")
+
 func _ready() -> void:
-    self.add_to_group("projectile")
+	self.add_to_group("projectile")
 
-    var timer := Timer.new()
-    add_child(timer)
+	if !persistant:
+		self.body_entered.connect(destroy)
 
-    timer.wait_time = lifetime
-    timer.one_shot = true
+	# manage projectile lifetime 
+	var timer := Timer.new()
+	add_child(timer)
 
-    timer.timeout.connect(Callable(self, "LifetimeEnd"))
+	timer.wait_time = lifetime
+	timer.one_shot = true
 
-    timer.start()
+	timer.timeout.connect(destroy)
 
+	timer.start()
 
-func LifetimeEnd() -> void:
-    queue_free()
+func Kill() -> void:
+	queue_free()
