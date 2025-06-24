@@ -3,6 +3,13 @@ extends CharacterBody3D
 ### constants ###
 # TODO make json config file to store these values
 
+const I_TIME = 0.3
+const MAX_HP = 150
+
+@onready var HP_Guage = $CanvasLayer/UI/HUD/HP/HP_guage
+@onready var HP_num = $CanvasLayer/UI/HUD/HP/HP_num
+const HP_Guage_speed = 2
+
 const SPEED = 100
 
 const JUMP_VELOCITY = 6.0
@@ -27,6 +34,11 @@ const sens = .01
 var dash_time = DASH_DURATION
 var dashing = false
 var dash_meter = DASH_METER_MAX
+
+var current_i_time = I_TIME
+var invincible = false
+
+var HP = MAX_HP
 
 ## camera movement ##
 func _unhandled_input(event):
@@ -92,4 +104,27 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
+	### HP ###
+
+	## I-frames ##
+	if invincible:
+		current_i_time -= delta
+		if current_i_time <= 0:
+			invincible = false
+			current_i_time = I_TIME
+
+	## UI ##
+	var HP_Val_Wrapper = round(move_toward(HP_Guage.value, HP, delta * HP_Guage_speed))
+	HP_Guage.value = HP_Val_Wrapper
+	HP_num.text = str(HP_Val_Wrapper)
+
 	move_and_slide()
+
+func _on_hit_detector_body_entered(body: Node3D) -> void:
+	if !body.is_in_group("projectile"):
+		return
+	
+	HP -= body.damage
+	invincible = true
+	
+	body.queue_free()
