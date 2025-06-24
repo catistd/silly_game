@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://cqk07uyxovqmj"]
+
+[ext_resource type="Script" uid="uid://cn7scoxmuqxya" path="res://Scripts/Player/PlayerController.gd" id="1_gmcrq"]
+[ext_resource type="Script" uid="uid://ct6airl6ni71o" path="res://Scripts/Player/DamageHandeler.gd" id="2_jpmrq"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_a8b1y"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gmcrq"]
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_gmcrq")
+
+[node name="mesh (temporary, will be replaced by blend scene)" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_a8b1y")
+
+[node name="Main_collider" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_gmcrq")
+
+[node name="Hit_Detector" type="Area3D" parent="." groups=["player_hit_detector"]]
+script = ExtResource("2_jpmrq")
+
+[node name="Secondary_collider" type="CollisionShape3D" parent="Hit_Detector"]
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_gmcrq")
+
+[node name="neck" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.575551, 0)
+
+[node name="Camera3D" type="Camera3D" parent="neck"]
+
+[connection signal="body_entered" from="Hit_Detector" to="Hit_Detector" method="_on_body_entered"]
