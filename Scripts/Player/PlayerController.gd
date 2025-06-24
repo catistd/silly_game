@@ -14,7 +14,7 @@ const SPEED = 100
 
 const JUMP_VELOCITY = 6.0
 const JUMP_BOOST = 1.2
-const DOUBLE_JUMP_MOD = 3/4
+const DOUBLE_JUMP_MOD = 3.0/4.0
 
 const DASH_MULTIPLIER = 10
 const DASH_DURATION = 0.2
