@@ -2,26 +2,27 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dbhoiw51ejqon"
-path="res://.godot/imported/Cube Layer.png-87c4dbdba8b7c605ed7b6b496290f213.ctex"
+uid="uid://bpceawy3wg3wj"
+path.s3tc="res://.godot/imported/squeakyhammer.png-416783943eb3d6e9a1b880d962a3dae4.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
-source_file="res://Assets/Models/textures/Cube Layer.png"
-dest_files=["res://.godot/imported/Cube Layer.png-87c4dbdba8b7c605ed7b6b496290f213.ctex"]
+source_file="res://Assets/Textures/weapons/squeakyhammer.png"
+dest_files=["res://.godot/imported/squeakyhammer.png-416783943eb3d6e9a1b880d962a3dae4.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=false
+mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -31,4 +32,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0
