@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://c5o5d4bdmwn3v"
-path="res://.godot/imported/squeakyhammer.blend-c4645f0682d0c52b9912267352b799a5.scn"
+uid="uid://b03x4igojqmxh"
+path="res://.godot/imported/Lightrev.blend-db9d2c55c6e8707dae238fd5712ab0db.scn"
 
 [deps]
 
-source_file="res://Assets/Models/squeakyhammer.blend"
-dest_files=["res://.godot/imported/squeakyhammer.blend-c4645f0682d0c52b9912267352b799a5.scn"]
+source_file="res://Assets/Models/weapons/Lightrev.blend"
+dest_files=["res://.godot/imported/Lightrev.blend-db9d2c55c6e8707dae238fd5712ab0db.scn"]
 
 [params]
 

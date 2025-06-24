@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://b2fm5d16g60wm"
-path="res://.godot/imported/thevon.blend-7c095e16fabf592b25448107e14ff25b.scn"
+path="res://.godot/imported/thevon.blend-be8e04ac65ff3cb4c23f59d118f63488.scn"
 
 [deps]
 
-source_file="res://Assets/Models/thevon.blend"
-dest_files=["res://.godot/imported/thevon.blend-7c095e16fabf592b25448107e14ff25b.scn"]
+source_file="res://Assets/Models/weapons/thevon.blend"
+dest_files=["res://.godot/imported/thevon.blend-be8e04ac65ff3cb4c23f59d118f63488.scn"]
 
 [params]
 

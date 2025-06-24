@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://b03x4igojqmxh"
-path="res://.godot/imported/Lightrev.blend-5bf3a6027048a026cf1a556dfa873166.scn"
+uid="uid://cdwyomwcv140x"
+path="res://.godot/imported/hevyrev.blend-92125a8030b0d5ff003dd0e861afa035.scn"
 
 [deps]
 
-source_file="res://Assets/Models/Lightrev.blend"
-dest_files=["res://.godot/imported/Lightrev.blend-5bf3a6027048a026cf1a556dfa873166.scn"]
+source_file="res://Assets/Models/weapons/hevyrev.blend"
+dest_files=["res://.godot/imported/hevyrev.blend-92125a8030b0d5ff003dd0e861afa035.scn"]
 
 [params]
 

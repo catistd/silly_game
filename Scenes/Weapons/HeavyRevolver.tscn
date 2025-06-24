@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ctk80xa87guua" path="res://Scripts/classes/GunBase.gd" id="1_dvmgu"]
 [ext_resource type="PackedScene" uid="uid://boa2tlfj7qwyx" path="res://Scenes/projectiles/BasicBullet.tscn" id="2_w281g"]
-[ext_resource type="PackedScene" uid="uid://cdwyomwcv140x" path="res://Assets/Models/hevyrev.blend" id="3_wke1n"]
+[ext_resource type="PackedScene" uid="uid://cdwyomwcv140x" path="res://Assets/Models/weapons/hevyrev.blend" id="3_wke1n"]
 
 [node name="HeavyRevolver" type="Node3D" node_paths=PackedStringArray("BarrelEnd", "model")]
 script = ExtResource("1_dvmgu")

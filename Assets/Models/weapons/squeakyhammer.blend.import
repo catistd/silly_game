@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bkv5pl1sgd22m"
-path="res://.godot/imported/sledegehammer.blend-56c024e6ba138cdb94615942c90310be.scn"
+uid="uid://c5o5d4bdmwn3v"
+path="res://.godot/imported/squeakyhammer.blend-2be1a2d725e6ff9d6cb9fd0b7b283069.scn"
 
 [deps]
 
-source_file="res://Assets/Models/sledegehammer.blend"
-dest_files=["res://.godot/imported/sledegehammer.blend-56c024e6ba138cdb94615942c90310be.scn"]
+source_file="res://Assets/Models/weapons/squeakyhammer.blend"
+dest_files=["res://.godot/imported/squeakyhammer.blend-2be1a2d725e6ff9d6cb9fd0b7b283069.scn"]
 
 [params]
 

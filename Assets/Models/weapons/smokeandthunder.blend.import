@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dly22jrbjmpom"
-path="res://.godot/imported/smokeandthunder.blend-9d1143684eeff38472e3e18c1be064b9.scn"
+path="res://.godot/imported/smokeandthunder.blend-6b9577aa72d720b0bc0537143bd56c44.scn"
 
 [deps]
 
-source_file="res://Assets/Models/smokeandthunder.blend"
-dest_files=["res://.godot/imported/smokeandthunder.blend-9d1143684eeff38472e3e18c1be064b9.scn"]
+source_file="res://Assets/Models/weapons/smokeandthunder.blend"
+dest_files=["res://.godot/imported/smokeandthunder.blend-6b9577aa72d720b0bc0537143bd56c44.scn"]
 
 [params]
 
