@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://t1itm1s5gmqy"]
+
+[ext_resource type="Script" uid="uid://ctk80xa87guua" path="res://Scripts/classes/GunBase.gd" id="1_dvmgu"]
+[ext_resource type="PackedScene" uid="uid://boa2tlfj7qwyx" path="res://Scenes/projectiles/BasicBullet.tscn" id="2_w281g"]
+[ext_resource type="PackedScene" uid="uid://cdwyomwcv140x" path="res://Assets/Models/hevyrev.blend" id="3_wke1n"]
+
+[node name="HeavyRevolver" type="Node3D" node_paths=PackedStringArray("BarrelEnd", "model")]
+script = ExtResource("1_dvmgu")
+Name = "Heavy Revolver"
+AmmoCapacity = 6
+BarrelEnd = NodePath("barrel")
+model = NodePath("hevyrev")
+projectile = ExtResource("2_w281g")
+projectile_velocity = 100.0
+fire_rate = 1000
+ammo_use = 1
+damage = 40
+metadata/_custom_type_script = "uid://ctk80xa87guua"
+
+[node name="hevyrev" parent="." instance=ExtResource("3_wke1n")]
+
+[node name="barrel" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.782787, -6.43751)
