@@ -14,6 +14,7 @@ const SPEED = 100
 
 const JUMP_VELOCITY = 6.0
 const JUMP_BOOST = 1.2
+const DOUBLE_JUMP_MOD = 3/4
 
 const DASH_MULTIPLIER = 10
 const DASH_DURATION = 0.2
@@ -27,9 +28,8 @@ const sens = .01
 
 ### traker variables ###
 
-### double jump commented out for now 
-	# TODO consult team about double jump
-	# var double_jump = true
+
+var double_jump = true
 
 var dash_time = DASH_DURATION
 var dashing = false
@@ -56,16 +56,16 @@ func _physics_process(delta: float) -> void:
 
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-	# else:
-		# double_jump = true
+	else:
+		double_jump = true
 
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 		velocity.x *= JUMP_BOOST
 		velocity.z *= JUMP_BOOST
-	# if Input.is_action_just_pressed("jump") and not is_on_floor() and double_jump:
-		# velocity.y = JUMP_VELOCITY
-		# double_jump = false
+	if Input.is_action_just_pressed("jump") and not is_on_floor() and double_jump:
+		velocity.y = JUMP_VELOCITY * DOUBLE_JUMP_MOD
+		double_jump = false
 
 	if Input.is_action_just_pressed("dash") and !dashing and dash_meter >= 50:
 		dashing = true
