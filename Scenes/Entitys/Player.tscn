@@ -27,6 +27,7 @@ shader_parameter/pixel_size = 4
 shader_parameter/screen_size = Vector2(1920, 1080)
 
 [node name="Player" type="CharacterBody3D"]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
 script = ExtResource("1_gmcrq")
 
 [node name="mesh (temporary, will be replaced by blend scene)" type="MeshInstance3D" parent="."]
@@ -47,31 +48,32 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.575551, 0)
 [node name="Camera3D" type="Camera3D" parent="neck"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-follow_viewport_enabled = true
 
 [node name="UI" type="Control" parent="CanvasLayer"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="HUD" type="Control" parent="CanvasLayer/UI"]
 z_index = 1
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
+anchor_left = -0.389
+anchor_right = 1.389
 anchor_bottom = 1.0
+offset_left = 0.0720215
+offset_right = -0.0720215
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="HP" type="Control" parent="CanvasLayer/UI/HUD"]
 anchors_preset = 0
-offset_left = 50.0
-offset_top = 507.0
-offset_right = 90.0
-offset_bottom = 547.0
+offset_left = 49.0
+offset_top = 403.0
+offset_right = 89.0
+offset_bottom = 443.0
 
 [node name="HP_guage" type="TextureProgressBar" parent="CanvasLayer/UI/HUD/HP"]
 layout_mode = 0
@@ -90,12 +92,13 @@ texture_progress = ExtResource("5_3kb4q")
 
 [node name="HP_num" type="Label" parent="CanvasLayer/UI/HUD/HP"]
 layout_mode = 0
-offset_left = 1.0
+offset_left = -3.0
 offset_top = 51.0
-offset_right = 50.0
+offset_right = 46.0
 offset_bottom = 81.0
 text = "150"
 label_settings = SubResource("LabelSettings_5s2qy")
+horizontal_alignment = 1
 
 [node name="Dash" type="Control" parent="CanvasLayer/UI/HUD"]
 anchors_preset = 0
@@ -112,8 +115,11 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -249.0
+offset_right = 249.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="pixelate" type="ColorRect" parent="CanvasLayer/UI/overlays"]
 material = SubResource("ShaderMaterial_pttsp")
@@ -121,7 +127,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -250.0
+offset_right = 249.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [connection signal="body_entered" from="Hit_Detector" to="." method="_on_hit_detector_body_entered"]

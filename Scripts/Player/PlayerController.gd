@@ -10,7 +10,7 @@ const MAX_HP = 150
 @onready var HP_num = $CanvasLayer/UI/HUD/HP/HP_num
 const HP_Guage_speed = 2
 
-const SPEED = 100
+const SPEED = 20
 
 const JUMP_VELOCITY = 6.0
 const JUMP_BOOST = 1.2
@@ -27,7 +27,6 @@ const DASH_COST = 50
 const sens = .01
 
 ### traker variables ###
-
 
 var double_jump = true
 
@@ -96,15 +95,15 @@ func _physics_process(delta: float) -> void:
 	## basic movment ##
 	var input_dir := Input.get_vector("left", "right", "forward", "back")
 	var direction = (neck.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-
 	if direction and !dashing:
-		velocity.x *= direction.x * SPEED
-		velocity.z *= direction.z * SPEED
-	else:
+		velocity.x = direction.x * SPEED
+		velocity.z = direction.z * SPEED
+	elif dashing or is_on_floor():
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
-
-	### HP ###
+	elif not is_on_floor():
+		velocity.x = move_toward(velocity.x, 0, SPEED/50)
+		velocity.z = move_toward(velocity.z, 0, SPEED/50)
 
 	## I-frames ##
 	if invincible:
@@ -113,10 +112,13 @@ func _physics_process(delta: float) -> void:
 			invincible = false
 			current_i_time = I_TIME
 
-	## UI ##
+	### UI ###
+	## HP ##
 	var HP_Val_Wrapper = round(move_toward(HP_Guage.value, HP, delta * HP_Guage_speed))
 	HP_Guage.value = HP_Val_Wrapper
-	HP_num.text = str(HP_Val_Wrapper)
+	HP_num.text = str(int(HP_Val_Wrapper))
+	
+	## Dash ##
 
 	move_and_slide()
 

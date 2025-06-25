@@ -67,6 +67,8 @@ func fire(end_pos: Vector3, type: FireType):
 				return
 
 	# TODO add fire animations here
+	# TODO recoil
+	# TODO muzzle flash
 
 	var start_pos = BarrelEnd.position
 
@@ -81,5 +83,5 @@ func fire(end_pos: Vector3, type: FireType):
 	get_parent().add_sibling(proj)
 
 func reload():
-	# TODO play animation here after their made
+	# TODO play animation here after they're made
 	CurrentAmmo = AmmoCapacity

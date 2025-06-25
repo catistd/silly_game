@@ -1,3 +1,70 @@
-[gd_scene format=3 uid="uid://wmpcnsbobdmn"]
+[gd_scene load_steps=11 format=3 uid="uid://wmpcnsbobdmn"]
 
-[node name="test_enviromet" type="Node3D"]
+[ext_resource type="Texture2D" uid="uid://cf0g4d1gc0qhb" path="res://Assets/Textures/SkyBoxes/blue_with_clouds.png" id="1_kpo5e"]
+[ext_resource type="Script" uid="uid://sk43gv10ya8b" path="res://Scripts/classes/MapBase.gd" id="1_woj4i"]
+[ext_resource type="Texture2D" uid="uid://dmbab4t6nt8e3" path="res://Assets/Textures/generic/Floor1.png" id="2_woj4i"]
+[ext_resource type="PackedScene" uid="uid://cqk07uyxovqmj" path="res://Scenes/Entitys/Player.tscn" id="2_yglnv"]
+
+[sub_resource type="Environment" id="Environment_yglnv"]
+background_mode = 1
+background_color = Color(0.641934, 0.641934, 0.641934, 1)
+ambient_light_source = 3
+reflected_light_source = 1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xyg7f"]
+shading_mode = 0
+albedo_texture = ExtResource("1_kpo5e")
+
+[sub_resource type="SphereMesh" id="SphereMesh_bur7m"]
+material = SubResource("StandardMaterial3D_xyg7f")
+flip_faces = true
+radial_segments = 16
+rings = 8
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_d1ex5"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ex0bm"]
+shading_mode = 0
+albedo_texture = ExtResource("2_woj4i")
+uv1_scale = Vector3(6, 6, 6)
+uv1_offset = Vector3(1, 1, 1)
+uv1_triplanar = true
+uv2_triplanar_sharpness = 2.2974
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_153dg"]
+size = Vector3(41.1016, 0.521484, 40.2462)
+
+[node name="test_enviromet" type="Node3D" node_paths=PackedStringArray("spawns")]
+script = ExtResource("1_woj4i")
+player_scene = ExtResource("2_yglnv")
+spawns = NodePath("Spawns")
+metadata/_custom_type_script = "uid://sk43gv10ya8b"
+
+[node name="Enviromet" type="Node3D" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Enviromet"]
+environment = SubResource("Environment_yglnv")
+
+[node name="SkyBox" type="MeshInstance3D" parent="Enviromet"]
+transform = Transform3D(251.47, 0, 0, 0, 251.47, 0, 0, 0, 251.47, 0, 0, 0)
+mesh = SubResource("SphereMesh_bur7m")
+skeleton = NodePath("../..")
+
+[node name="World" type="StaticBody3D" parent="Enviromet"]
+
+[node name="Ground" type="MeshInstance3D" parent="Enviromet/World"]
+transform = Transform3D(20, 0, 0, 0, 0.4, 0, 0, 0, 20, 0, 0, 0)
+mesh = SubResource("PlaneMesh_d1ex5")
+surface_material_override/0 = SubResource("StandardMaterial3D_ex0bm")
+
+[node name="Ground_collider" type="CollisionShape3D" parent="Enviromet/World"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.34235, -0.239258, 0.0904617)
+shape = SubResource("BoxShape3D_153dg")
+
+[node name="Spawns" type="Node3D" parent="."]
+
+[node name="Marker3D" type="Marker3D" parent="Spawns"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.03615, 0)
+
+[node name="TestPlayer" parent="." instance=ExtResource("2_yglnv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.62077, 0)
