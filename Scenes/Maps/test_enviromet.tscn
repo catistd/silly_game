@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://wmpcnsbobdmn"]
+[gd_scene load_steps=12 format=3 uid="uid://wmpcnsbobdmn"]
 
 [ext_resource type="Texture2D" uid="uid://cf0g4d1gc0qhb" path="res://Assets/Textures/SkyBoxes/blue_with_clouds.png" id="1_kpo5e"]
 [ext_resource type="Script" uid="uid://sk43gv10ya8b" path="res://Scripts/classes/MapBase.gd" id="1_woj4i"]
 [ext_resource type="Texture2D" uid="uid://dmbab4t6nt8e3" path="res://Assets/Textures/generic/Floor1.png" id="2_woj4i"]
 [ext_resource type="PackedScene" uid="uid://cqk07uyxovqmj" path="res://Scenes/Entitys/Player.tscn" id="2_yglnv"]
+[ext_resource type="AudioStream" uid="uid://rbcvwmonio2w" path="res://Assets/Music/Dungeon1.ogg" id="5_xyg7f"]
 
 [sub_resource type="Environment" id="Environment_yglnv"]
 background_mode = 1
@@ -68,3 +69,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.03615, 0)
 
 [node name="TestPlayer" parent="." instance=ExtResource("2_yglnv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.62077, 0)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_xyg7f")
+volume_db = -3.748
+autoplay = true
+parameters/looping = false
