@@ -1,3 +1,5 @@
 # Godot 4+ specific ignores
 .godot/
 /android/
+Assets/Models/weapons/textures/shading.png
+Assets/Models/weapons/textures/shading.png.import
